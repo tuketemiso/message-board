@@ -25,6 +25,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to root_path , notice: 'メッセージを保存しました'
     else
+      #binding.pry
       # メッセージが保存できなかった時
       @messages = Message.all
       flash.now[:alert] = "メッセージの保存に失敗しました。"
